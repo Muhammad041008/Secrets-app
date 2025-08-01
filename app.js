@@ -11,7 +11,7 @@ dotenv.config();
 
 // Initialize Express app
 const app = express();
-const PORT = process.env.PORT || 3000;
+const PORT = process.env.PORT || 10000;
 
 // Middleware
 app.use(express.urlencoded({ extended: true })); // To parse form data
@@ -37,6 +37,6 @@ mongoose.connect(process.env.MONGO_URI,{
 app.use(authRoutes);
 
 // Start the server
-app.listen(PORT, () => {
-    console.log(`Server is running on http://localhost:${PORT}`);
+app.listen(PORT, function () {
+  console.log(`Server is running on http://localhost:${PORT}`);
 });
