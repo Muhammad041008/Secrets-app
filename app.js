@@ -1,5 +1,6 @@
-const express = require("express");
+require("dotenv").config();
 const mongoose = require("mongoose");
+const express = require("express");
 const session = require("express-session");
 const dotenv = require("dotenv");
 const bcrypt = require("bcryptjs");
@@ -25,7 +26,7 @@ app.use(session({
 }));
 
 // MongoDB connection
-mongoose.connect(process.env.MONGO_URI, {
+mongoose.connect(process.env.MONGO_URI,{
     // useNewUrlParser: true,
     // useUnifiedTopology: true,
 })
